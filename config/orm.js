@@ -9,6 +9,18 @@ function createQmarks(num) {
     return arr.toString();
 }
 
+// Translates string to SQL readable query and concatenates values
+function translateSql(obj) {
+    var arr = [];
+    for (var key in ob) {
+        if(Object.hasOwnProperty.call(ob, key)) {
+            if(typeof value === "string" && value.indexOf(" ") >= 0)
+            value = "'" + value + "'";
+        }
+        arr.push(key + "=" + value)
+    }
+    return arr.toString();
+}
 // Object for all our SQL statement functions.
 var orm = {
     selectAll: function(table, cb) {
