@@ -15,7 +15,7 @@
                       <option value="CheeseBurger">CheeseBurger</option>
                       <option value="DoubleChzBurger">Double Cheese Burger</option>
                       <option value="VeggieBurger">Veggie Burger</option>
-                      <option value="SpicyChicken">Spicy chicken</option>
+                      <option value="SpicyChicken">Spicy Chicken</option>
                       <option value="BigMick">The Big Mick</option>
                       <option value="MiniChz">Mini CheeseBurgers</option>
                   </select>
@@ -30,12 +30,11 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="card card-default">
-                
-                <div class="card-body">
-
-                <div class="card-heading" id="leftside"><strong>Order Your Burger</strong>
+                <div class="card-header" id="leftside"><strong>Order Your Burger</strong>
                 <p>Send order when you're ready</p>
                 </div>
+                
+                <div class="card-body">
 
                     <ul>
                         {{#each burgers}}
@@ -53,13 +52,12 @@
             </div>
         </div>
     <div class="col-sm-6">
-            <div class="card card-default">
+            <div class="card">
+                <div class="card-header" id="rightside"><strong>Burger is Ready!</strong>
+                <p>Eat your Burger!</p>
+                </div>
             
                 <div class="card-body">
-                    
-                <div class="card-heading" id="rightside"><strong>Burger is Ready!</strong>
-                <p>Pick up your Burger</p>
-                </div>
 
                     <ul>
                         {{#each burgers}}
