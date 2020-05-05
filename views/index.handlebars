@@ -2,15 +2,13 @@
     
     <div class="jumbotron">
         <h1 class="display-3">Eat Some Burgers</h1>
-        <p class="lead">Jumbo helper text</p>
-        <hr class="my-2">
-        <p>Create a Burger. Eat a Burger.</p>
+        <p class="lead">Create a Burger. Eat a Burger.</p>
+        {{!-- <hr class="my-2"> --}}
         <h2>Create your Burger</h2>
         <panel>
             <form class="create-form">
                 <div class="form-group">
                   <label for="newburger">Order a Burger</label>
-                  {{!--<input type"text" id="newburger" name="burger"> --}}
                   <select data-placeholer="" id="newburger" name="burger">
                       <option value="Nothing Selected" selected>Please Select a Sandwich</option>
                       <option value="Hamburger">Hamburger</option>
@@ -23,7 +21,7 @@
                   </select>
 
                   <button type="submit" class="btn btn-success" id="addburger">
-                      <span class="fa fa-thumbs up"></span>
+                      <span class="fa fa-thumbs-up"></span>
                   </button>
                 </div>
             </form>
@@ -31,11 +29,13 @@
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="leftside"><strong>Order Your Burger</strong>
-                    <p>Send order when you're ready</p>
+            <div class="card card-default">
+                
+                <div class="card-body">
+
+                <div class="card-heading" id="leftside"><strong>Order Your Burger</strong>
+                <p>Send order when you're ready</p>
                 </div>
-                <div class="panel-body">
 
                     <ul>
                         {{#each burgers}}
@@ -53,11 +53,14 @@
             </div>
         </div>
     <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="rightside"><strong>Burger is Ready!</strong>
-                    <p>Pick up your Burger</p>
+            <div class="card card-default">
+            
+                <div class="card-body">
+                    
+                <div class="card-heading" id="rightside"><strong>Burger is Ready!</strong>
+                <p>Pick up your Burger</p>
                 </div>
-                <div class="panel-body">
+
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
