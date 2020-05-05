@@ -7,10 +7,10 @@ var burger = {
          cb(res);
      });
  },
- insertOne: function(cb) {
-    orm.insertOne("burgers", cols, vals, function(res){
-        cb(res);
-    });
+ insertOne: function(cols, vals, cb) {
+     orm.insertOne("burgers", cols, vals, function(res) {
+         cb(res);
+     })
  },
  updateOne: function(objColVals, condition, cb) {
     orm.updateOne("burgers", objColVals, condition, function(res){
@@ -21,6 +21,6 @@ deleteOne: function(condition, cb) {
     orm.deleteOne("burgers", condition, function(res){
         cb(res);
     });
- }
+  }
 };
-modules.exports = burger;
+module.exports = burger;

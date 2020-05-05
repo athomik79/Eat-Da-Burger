@@ -10,21 +10,23 @@ function createQmarks(num) {
 }
 
 // Translates string to SQL readable query and concatenates values
-function translateSql(obj) {
+function translateSql(ob) {
     var arr = [];
     for (var key in ob) {
+        var value = ob[key];
         if(Object.hasOwnProperty.call(ob, key)) {
-            if(typeof value === "string" && value.indexOf(" ") >= 0)
-            value = "'" + value + "'";
-        }
-        arr.push(key + "=" + value)
+            if(typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
+            arr.push(key + "=" + value)
+        }  
     }
     return arr.toString();
 }
 // Object for all our SQL statement functions.
 var orm = {
     selectAll: function(table, cb) {
-        var dbQuery = "SELECT * FROM + table + ";"";
+        var dbQuery = "SELECT * FROM " + table + ";";
 
         connection.query(dbQuery, function(err, res){
             if (err) {
@@ -38,9 +40,10 @@ var orm = {
         var dbQuery = 
         "INSERT INTO " + 
         table + 
+        " (" +
         cols.toString() + 
         ") " + 
-        "Values (" + 
+        "VALUES (" + 
         createQmarks(vals.length) + 
         ") ";
 
