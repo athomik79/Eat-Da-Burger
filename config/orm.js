@@ -18,7 +18,7 @@ function translateSql(ob) {
             if(typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            arr.push(key + "=" + value)
+            arr.push(key + "=" + value);
         }  
     }
     return arr.toString();
@@ -37,7 +37,7 @@ var orm = {
     },
 
     insertOne: function(table, cols, vals, cb) {
-        var dbQuery = 
+         var dbQuery = 
         "INSERT INTO " + 
         table + 
         " (" +
@@ -57,7 +57,13 @@ var orm = {
     },
 
     updateOne: function(table, objColVals, condition, cb) {
-        var dbQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
+        var dbQuery = 
+        "UPDATE " + 
+        table + 
+        " SET " + 
+        translateSql(objColVals) + 
+        " WHERE " + 
+        condition;
 
         console.log(dbQuery);
         connection.query(dbQuery, function(err, res){
@@ -69,8 +75,8 @@ var orm = {
     },
     deleteOne: function(table, condition, cb) {
         var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
-
         console.log(dbQuery);
+
         connection.query(dbQuery, function(err, res){
             if (err) {
                 throw err;
