@@ -1,5 +1,7 @@
 // Set up MySQL connection.
-const mysql = require("mysql");
+var mysql = require("mysql");
+var connection;
+
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -10,8 +12,6 @@ if (process.env.JAWSDB_URL) {
     database: "burgers_db"
   });
 }
-connection.connect();
-module.exports = connection;
 
-  // Export connection for our ORM to use.
+connection.connect();
 module.exports = connection;
