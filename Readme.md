@@ -12,6 +12,8 @@ athomik79
 
 Eat-Da-Burger
 
+![Eat Da Burger](https://github.com/athomik79/Eat-Da-Burger/blob/master/public/assets/img/eat_da_burger.png)
+
 ### Description:
 
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
@@ -19,6 +21,9 @@ Eat-Da-Burger! is a restaurant app that lets users input the names of burgers th
 ### Installation:
 
 Run in command line with full directory using: `node server.js`
+
+Here's a link to the deployed app:
+[Link to Eat Da Burger App](https://hidden-spire-81956.herokuapp.com/)
 
 ### Usage:
 
